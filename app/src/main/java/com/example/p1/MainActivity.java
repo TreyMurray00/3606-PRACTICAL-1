@@ -5,11 +5,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 import android.widget.CheckBox;
+import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
     
     private TextView total;
     private CheckBox shirt, pants, socks;
+    private int sum = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
     
-    public void calucateTotal(){
-        private int sum = 0;
+    public void calculateTotal(View v){
+
         total = (TextView) findViewById(R.id.totalText);
         shirt = (CheckBox) findViewById(R.id.checkBox);
         pants = (CheckBox) findViewById(R.id.checkBox2);
