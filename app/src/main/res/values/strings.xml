@@ -1,3 +1,8 @@
 <resources>
-    <string name="app_name">P1</string>
+    <string name="app_name">Practical_1</string>
+    <string name="small">Small</string>
+    <string name="med">Medium</string>
+    <string name="large">Large</string>
+    <string name="shortSize">Short</string>
+    <string name="longSize">Long</string>
 </resources>
