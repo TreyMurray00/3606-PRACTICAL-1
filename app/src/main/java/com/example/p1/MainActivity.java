@@ -26,9 +26,9 @@ public class MainActivity extends AppCompatActivity {
         
         if (shirt.isChecked())
             sum += 200;
-        else if (pants.isChecked())
+        if (pants.isChecked())
             sum += 300;
-        else if (socks.isChecked())
+        if (socks.isChecked())
             sum += 50;
         
         total.setText("Your total is $" + String.valueOf(sum) + ".00");
