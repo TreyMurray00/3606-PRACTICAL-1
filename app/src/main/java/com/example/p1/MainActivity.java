@@ -1,3 +1,10 @@
+/*
+GROUP:
+Trey Murray: 816019360
+Shivan Maharaj: 816016248
+Rehannah Baptiste: 816023880
+Alyssa Rahim: 816024905
+*/
 package com.example.p1;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -54,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         String pantsSize = "None";
         String shirtSize = "None";
         int shirtId = shirtButtons.getCheckedRadioButtonId();
-        //System.out.println(shirtId);
         RadioButton shirtSizeRadio = findViewById(shirtId);
         shirtSize = (String) shirtSizeRadio.getText();
         int pantsId = pantsButtons.getCheckedRadioButtonId();
@@ -75,7 +81,6 @@ public class MainActivity extends AppCompatActivity {
             summary += "Socks (" + sockSize + "): $50 \n";
             sum += 50;
         }
-       //Toast.makeText(MainActivity.this, summary+ "\nTOTAL: "+shirtSize, Toast.LENGTH_LONG).show();
        total.setText(summary+"\nYour total is $" + String.valueOf(sum) + ".00");
         sum = 0;
 
