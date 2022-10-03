@@ -30,30 +30,55 @@ public class MainActivity extends AppCompatActivity {
         pantsButtons = (RadioGroup) findViewById(R.id.radioGroupPants);
         socksButtons = (RadioGroup) findViewById(R.id.radioGroupSocks);
     }
-    
+    public void onCheck(View view) {
+        int id;
+        RadioButton selected;
+        if(shirt.isChecked()) {
+            id =  shirtButtons.getChildAt(1).getId();
+            shirtButtons.check(id);
+        }
+        if(pants.isChecked()){
+            id =  pantsButtons.getChildAt(1).getId();
+            pantsButtons.check(id);
+
+        }
+        if(socks.isChecked()){
+            id =  socksButtons.getChildAt(1).getId();
+            socksButtons.check(id);
+
+        }
+    }
     public void calculateTotal(View view) {
-        sum = 0;
         summary = "";
+        String sockSize = "None";
+        String pantsSize = "None";
+        String shirtSize = "None";
         int shirtId = shirtButtons.getCheckedRadioButtonId();
+        //System.out.println(shirtId);
         RadioButton shirtSizeRadio = findViewById(shirtId);
-        String shirtSize = (String) shirtSizeRadio.getText();
+        shirtSize = (String) shirtSizeRadio.getText();
         int pantsId = pantsButtons.getCheckedRadioButtonId();
         RadioButton pantsSizeRadio = findViewById(pantsId);
-        String pantsSize = (String) pantsSizeRadio.getText();
+        pantsSize = (String) pantsSizeRadio.getText();
         int sockId = socksButtons.getCheckedRadioButtonId();
         RadioButton sockSizeRadio = findViewById(sockId);
-        String sockSize = (String) sockSizeRadio.getText();
-        if (shirt.isChecked())
+        sockSize = (String) sockSizeRadio.getText();
+        if (shirt.isChecked()) {
             summary += "Shirt (" + shirtSize + "): $200.00 \n";
             sum += 200;
-        if (pants.isChecked())
-            summary += "Pants ("+ pantsSize +"): $300.00 \n";
+        }
+        if (pants.isChecked()) {
+            summary += "Pants (" + pantsSize + "): $300.00 \n";
             sum += 300;
-        if (socks.isChecked())
+        }
+        if (socks.isChecked()){
             summary += "Socks (" + sockSize + "): $50 \n";
             sum += 50;
+        }
        //Toast.makeText(MainActivity.this, summary+ "\nTOTAL: "+shirtSize, Toast.LENGTH_LONG).show();
        total.setText(summary+"\nYour total is $" + String.valueOf(sum) + ".00");
+        sum = 0;
+
 
     }
 }
